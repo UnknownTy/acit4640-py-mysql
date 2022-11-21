@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  web123:
+    image: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./templates:/etc/nginx/templates
+      - lab11frontend:/frontend
+    env_file:
+      - variables.env
+  app456:
+    build:
+      context: app
+    env_file:
+      - variables.env
+    volumes:
+      - lab11frontend:/frontend
+  database789:
+    image: mysql
+    volumes:
+      - lab11db:/var/lib/mysql
+    env_file:
+      - variables.env
+volumes:
+  lab11db:
+  lab11frontend:

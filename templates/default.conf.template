@@ -1,0 +1,12 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name application;
+        root $NGINX_ROOT;
+        location / {
+                try_files $uri $uri/ =404;
+        }
+        location /json {
+                proxy_pass $BACKEND_URL:$BACKEND_PORT/json;
+        }
+}
