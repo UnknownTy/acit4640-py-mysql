@@ -10,12 +10,11 @@ RUN mkdir /frontend
 WORKDIR /tmp/
 
 COPY . /backend/src
+COPY ../frontend/* /frontend
 
-RUN mv /tmp/acit4640-py-mysql-master/frontend/* /frontend
 WORKDIR /backend/src
 RUN pip install -r ./requirements.txt
 
-COPY ./boot.sh .
 EXPOSE ${BACKEND_PORT}
 
 
