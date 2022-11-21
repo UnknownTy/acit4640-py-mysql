@@ -11,8 +11,7 @@ services:
     env_file:
       - variables.env
   app456:
-    build:
-      context: app
+    image: unknownty/4640lab12
     env_file:
       - variables.env
     volumes:
