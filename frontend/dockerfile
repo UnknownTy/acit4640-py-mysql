@@ -1,3 +1,4 @@
 FROM nginx
 
+RUN mkdir /frontend
 COPY index.html /frontend

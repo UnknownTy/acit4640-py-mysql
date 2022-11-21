@@ -2,11 +2,11 @@ version: '3'
 
 services:
   web123:
-    image: unknownty/4640lab12back
+    image: unknownty/4640lab12front
     ports:
       - "8080:80"
     volumes:
-      - ./templates:/etc/nginx/templates
+      - ./frontend/templates:/etc/nginx/templates
     env_file:
       - variables.env
   app456:
